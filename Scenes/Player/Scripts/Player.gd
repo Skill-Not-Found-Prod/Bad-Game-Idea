@@ -81,7 +81,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 	
-	if Input.is_key_pressed(KEY_J):
+	if Input.is_action_just_pressed("Action"):
 		StartDialogue()
 
 func StartDialogue(Dialogue : Dictionary = {"Portrait" : ["res://icon.png", "res://icon.png", "res://icon.png"],"Lines" : ["How are you?", "Woah it works", "Baller"],}):
