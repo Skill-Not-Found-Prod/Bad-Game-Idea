@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b67di0ggu5cvo"]
+
+[ext_resource type="Script" uid="uid://dt5f0rlde1plb" path="res://Scenes/Player/Scripts/Player.gd" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://dt3w1jiovm27h" path="res://icon.png" id="2_h54ih"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h54ih")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ixxa"]
+size = Vector2(20, 12)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_ft8w5")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+modulate = Color(0, 0.95686275, 0, 1)
+y_sort_enabled = true
+position = Vector2(-2.0861626e-07, -13.999999)
+scale = Vector2(0.078125, 0.15625)
+sprite_frames = SubResource("SpriteFrames_dewec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ixxa")
+
+[node name="CameraPos" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera2D" parent="CameraPos"]
+unique_name_in_owner = true
+zoom = Vector2(0.75, 0.75)
+limit_smoothed = true
