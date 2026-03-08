@@ -25,19 +25,19 @@ func handle_movement(_d): # Self explanatory
 		velocity.x = lerp(velocity.x, 0.0, FRIC)
 		return
 	
-	if Input.is_action_pressed("W"): # Going through each direction and setting movement, not optimal but I like it this way lmao
+	if Input.is_action_pressed("Up"): # Going through each direction and setting movement, not optimal but I like it this way lmao
 		velocity.y = lerp(velocity.y, -SPEED, ACCEL)
 		MovingY = true
-	elif Input.is_action_pressed("S"):
+	elif Input.is_action_pressed("Down"):
 		velocity.y = lerp(velocity.y, SPEED, ACCEL)
 		MovingY = true
 	else:
 		velocity.y = lerp(velocity.y, 0.0, FRIC)
 		MovingY = false
-	if Input.is_action_pressed("A"):
+	if Input.is_action_pressed("Left"):
 		velocity.x = lerp(velocity.x, -SPEED, ACCEL)
 		MovingX = true
-	elif Input.is_action_pressed("D"):
+	elif Input.is_action_pressed("Right"):
 		velocity.x = lerp(velocity.x, SPEED, ACCEL)
 		MovingX = true
 	else:
@@ -55,15 +55,15 @@ func handle_camera_movement():
 		CamPos.position.x = lerp(CamPos.position.x, 0.0, FRIC / 3)
 		return
 	
-	if Input.is_action_pressed("W"): # Doing the same as above but for the camera
+	if Input.is_action_pressed("Up"): # Doing the same as above but for the camera
 		CamPos.position.y = lerp(CamPos.position.y, -SPEED / 8, ACCEL / 4)
-	elif Input.is_action_pressed("S"):
+	elif Input.is_action_pressed("Down"):
 		CamPos.position.y = lerp(CamPos.position.y, SPEED / 8, ACCEL / 4)
 	else:
 		CamPos.position.y = lerp(CamPos.position.y, 0.0, FRIC / 3)
-	if Input.is_action_pressed("A"):
+	if Input.is_action_pressed("Left"):
 		CamPos.position.x = lerp(CamPos.position.x, -SPEED / 8, ACCEL / 4)
-	elif Input.is_action_pressed("D"):
+	elif Input.is_action_pressed("Right"):
 		CamPos.position.x = lerp(CamPos.position.x, SPEED / 8, ACCEL / 4)
 	else:
 		CamPos.position.x = lerp(CamPos.position.x, 0.0, FRIC / 3)

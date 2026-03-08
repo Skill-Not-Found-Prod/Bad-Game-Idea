@@ -89,6 +89,7 @@ offset_bottom = 260.0
 metadata/_edit_use_anchors_ = true
 
 [node name="BG" type="ColorRect" parent="CameraPos/Camera/Textbox"]
+texture_filter = 1
 layout_mode = 0
 offset_right = 427.0
 offset_bottom = 120.0
