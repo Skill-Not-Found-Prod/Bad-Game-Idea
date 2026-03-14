@@ -84,6 +84,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Action") and not IsInDialogue():
 		StartDialogue()
 
-func StartDialogue(Dialogue : Dictionary = {"Portrait" : ["res://icon.png", "res://icon.png", "res://icon.png"],"Lines" : ["How are you?", "Woah it works", "Baller"],}):
+func StartDialogue(Dialogue : Dictionary = {"Portrait" : ["res://Assets/Art/icon.png", "res://Assets/Art/icon.png", "res://Assets/Art/icon.png"],"Lines" : ["How are you?", "Woah it works", "Baller"],}):
 	%"Dialogue Handler".dialogue = Dialogue
 	%"Dialogue Handler".StartDialogue()
