@@ -67,7 +67,7 @@ func update_portrait():
 				portrait.texture = dialogue["Portrait"][current_line]
 				%DialogueAnimationPlayer.play("New Portrait")
 		else:
-			portrait.texture = preload("res://Assets/Art/icon.png")
+			portrait.texture = preload("res://Assets/art/icon.png")
 
 func update_line():
 	text.visible_characters = 0

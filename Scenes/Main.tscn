@@ -1,15 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://qwibfrvt4d4t"]
+[gd_scene load_steps=6 format=3 uid="uid://qwibfrvt4d4t"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_kln2b"]
+[ext_resource type="Script" uid="uid://5h4wvtf44ngp" path="res://Scenes/main.gd" id="1_kln2b"]
 [ext_resource type="PackedScene" uid="uid://b67di0ggu5cvo" path="res://Scenes/Player/Player.tscn" id="1_r150o"]
-[ext_resource type="Texture2D" uid="uid://dt3w1jiovm27h" path="res://Assets/Art/icon.png" id="2_idj7w"]
+[ext_resource type="Texture2D" uid="uid://gdmqtkliq0m5" path="res://Assets/Art/Red.png" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://c3bq4rcfnfbmv" path="res://Scenes/base map.tscn" id="4_rgh2o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgh2o"]
+size = Vector2(103, 20)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_kln2b")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_r150o")]
 
-[node name="Icon" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(6, -19)
-texture = ExtResource("2_idj7w")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 20)
+shape = SubResource("RectangleShape2D_rgh2o")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StaticBody2D"]
+y_sort_enabled = true
+offset_left = -53.0
+offset_top = 2.0
+offset_right = 52.0
+offset_bottom = 30.0
+size_flags_horizontal = 0
+texture = ExtResource("3_kln2b")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="TileMapLayer" parent="." instance=ExtResource("4_rgh2o")]
