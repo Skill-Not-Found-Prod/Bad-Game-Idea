@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b67di0ggu5cvo"]
+[gd_scene load_steps=10 format=3 uid="uid://b67di0ggu5cvo"]
 
 [ext_resource type="Script" uid="uid://dt5f0rlde1plb" path="res://Scenes/Player/Scripts/Player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://dbacsti8oe0to" path="res://Assets/Art/Orange.png" id="2_h54ih"]
 [ext_resource type="Script" uid="uid://c3k73rw36gip3" path="res://Scenes/Player/dialogue_handler.gd" id="3_h54ih"]
+[ext_resource type="FontFile" uid="uid://dgnpj4lbb0dfn" path="res://Assets/Font/ok/5/DeterminationSansWebRegular-369X.ttf" id="3_ude3g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dewec"]
 animations = [{
@@ -16,7 +17,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ixxa"]
-size = Vector2(12, 7)
+size = Vector2(14, 14)
 
 [sub_resource type="Animation" id="Animation_h54ih"]
 resource_name = "New Portrait"
@@ -62,14 +63,12 @@ script = ExtResource("1_ft8w5")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
-position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_dewec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 physics_interpolation_mode = 1
 show_behind_parent = true
 y_sort_enabled = true
-position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_5ixxa")
 
 [node name="CameraPos" type="Node2D" parent="."]
@@ -87,22 +86,22 @@ anchors_preset = 0
 offset_left = -213.0
 offset_top = 140.0
 offset_right = 214.0
-offset_bottom = 260.0
+offset_bottom = 200.0
 metadata/_edit_use_anchors_ = true
 
 [node name="BG" type="ColorRect" parent="CameraPos/Camera/Textbox"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 427.0
-offset_bottom = 120.0
+offset_bottom = 60.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Port" type="TextureRect" parent="CameraPos/Camera/Textbox"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 120.0
-offset_bottom = 120.0
+offset_right = 60.0
+offset_bottom = 60.0
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
@@ -113,8 +112,11 @@ offset_left = 165.0
 offset_top = 4.0
 offset_right = 421.0
 offset_bottom = 115.0
-theme_override_font_sizes/normal_font_size = 14
+theme_override_colors/default_color = Color(0.1855619, 0.07884132, 0.0016157974, 1)
+theme_override_fonts/normal_font = ExtResource("3_ude3g")
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
+text = "abc"
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogueAnimationPlayer" type="AnimationPlayer" parent="CameraPos/Camera/Textbox"]

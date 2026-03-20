@@ -5,10 +5,10 @@ extends CharacterBody2D
 @onready var CamPos = %CameraPos
 @onready var Sprite = %Sprite
 
-const SPEED = 300.0
+const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
 const ACCEL = 0.05
-const FRIC = 0.2
+const FRIC = 0.1
 
 var MovingX = false
 var MovingY = false
@@ -58,20 +58,20 @@ func handle_camera_movement():
 	if Input.is_action_pressed("Up"): # Doing the same as above but for the camera
 		CamPos.position.y = lerp(CamPos.position.y, -SPEED / 8, ACCEL / 4)
 	elif Input.is_action_pressed("Down"):
-		CamPos.position.y = lerp(CamPos.position.y, SPEED / 8, ACCEL / 4)
+		CamPos.position.y = lerp(CamPos.position.y,  SPEED / 8, ACCEL / 4)
 	else:
-		CamPos.position.y = lerp(CamPos.position.y, 0.0, FRIC / 3)
+		CamPos.position.y = lerp(CamPos.position.y, 0.0, FRIC / 1.5)
 	if Input.is_action_pressed("Left"):
 		CamPos.position.x = lerp(CamPos.position.x, -SPEED / 8, ACCEL / 4)
 	elif Input.is_action_pressed("Right"):
 		CamPos.position.x = lerp(CamPos.position.x, SPEED / 8, ACCEL / 4)
 	else:
-		CamPos.position.x = lerp(CamPos.position.x, 0.0, FRIC / 3)
+		CamPos.position.x = lerp(CamPos.position.x, FRIC / 3, FRIC / 1.5)
 
 func _physics_process(delta: float) -> void:
 	
 	if IsInDialogue():
-		%Textbox.position.y = lerp(%Textbox.position.y, 0.0, 0.1)
+		%Textbox.position.y = lerp(%Textbox.position.y, 60.0, 0.1)
 	else:
 		%Textbox.position.y = lerp(%Textbox.position.y, 140.0, 0.1)
 	

@@ -100,6 +100,14 @@ Action={
 ]
 }
 
+[internationalization]
+
+rendering/snap/snap_2d_transforms_to_pixel=false
+rendering/quality/msaa_2d=0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+viewport/hdr_2d=true
+anti_aliasing/quality/msaa_2d=3
+2d/snap/snap_2d_transforms_to_pixel=true
